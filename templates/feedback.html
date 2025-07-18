@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head><title>All Feedbacks</title></head>
+<body>
+    <h1>All Feedbacks</h1>
+    {% if feedback_list %}
+        <ul>
+        {% for fb in feedback_list %}
+            <li><strong>{{ fb.name }}</strong>: {{ fb.comment }}</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No feedback submitted yet.</p>
+    {% endif %}
+    <a href="{{ url_for('feedback_form') }}">← Submit More Feedback</a>
+</body>
+</html>
